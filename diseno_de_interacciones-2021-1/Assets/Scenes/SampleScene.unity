@@ -421,7 +421,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 988579059, guid: d543a1083f89b4356a72adb0dfaf8c7f, type: 3}
       propertyPath: speed
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 988579059, guid: d543a1083f89b4356a72adb0dfaf8c7f, type: 3}
       propertyPath: torque.y
