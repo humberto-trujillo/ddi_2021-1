@@ -7,6 +7,8 @@ public class Problem1 : MonoBehaviour
     void Start()
     {
         int[] nums = {8,1,2,2,3};
+        int[] nums2 = {-8,1,2,-2,3};
+        
         int[] output = NumbersLessThan(nums);
         foreach (var num in output)
         {
