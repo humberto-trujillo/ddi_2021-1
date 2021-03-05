@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5028201115979987683}
   - component: {fileID: 988579059}
   - component: {fileID: 988579055}
+  - component: {fileID: 6589354616887294860}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -107,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51d2fbcdaa5c4b99a12ddebc355911e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInsideZone: 0
+  interactionKey: 112
   direction: {x: 0, y: 10, z: 20}
   torque: {x: 0, y: 1, z: 0}
   speed: 100
@@ -127,3 +130,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6589354616887294860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028201115979987682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29448890315e748e79423fbff0936da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInsideZone: 0
+  interactionKey: 112
