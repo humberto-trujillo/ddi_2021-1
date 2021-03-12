@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Interactable : MonoBehaviour
 {
     public bool isInsideZone = false;
-    public KeyCode interactionKey = KeyCode.P;
+    // public KeyCode interactionKey = KeyCode.P;
+    public string interactionButton = "Interact";
     
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     public virtual void Update()
     {
-        if (isInsideZone && Input.GetKeyDown(interactionKey))
+        // if (isInsideZone && Input.GetKeyDown(interactionKey))
+        if (isInsideZone && CrossPlatformInputManager.GetButtonDown(interactionButton))
         {
             Interact();
         }
