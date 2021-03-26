@@ -35,6 +35,15 @@ public class Interactable : MonoBehaviour
         isInsideZone = true;
     }
 
+    // /// <summary>
+    // /// OnMouseDown is called when the user has pressed the mouse button while
+    // /// over the GUIElement or Collider.
+    // /// </summary>
+    // void OnMouseDown()
+    // {
+    //     Interact();
+    // }
+
     /// <summary>
     /// OnTriggerExit is called when the Collider other has stopped touching the trigger.
     /// </summary>
