@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using IBM.Watsson.Examples;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -12,6 +13,18 @@ public class Interactable : MonoBehaviour
     public float gazeTimer = 0;
     // public KeyCode interactionKey = KeyCode.P;
     public string interactionButton = "Interact";
+
+    public string voiceCommand = "Brincar";
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        ExampleStreaming commandProcessor = GameObject.FindObjectOfType<ExampleStreaming>();
+        commandProcessor.onVoiceCommandRecognized += OnVoiceCommandRecognized;
+    }
     
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -31,6 +44,14 @@ public class Interactable : MonoBehaviour
                 gazedAt = false;
                 gazeTimer = 0f;
             }
+        }
+    }
+
+    public void OnVoiceCommandRecognized(string command)
+    {
+        if (command.ToLower() == voiceCommand.ToLower() && gazedAt)
+        {
+            Interact();
         }
     }
 
@@ -64,6 +85,27 @@ public class Interactable : MonoBehaviour
         {
             gazeTimer = 0f;
         }
+    }
+
+    public void OnPointerEnter()
+    {
+        gazedAt = true;
+        gazeTimer = 0f;
+    }
+
+    public void OnPointerExit()
+    {
+        gazedAt = false;
+        gazeTimer = 0f;
+    }
+
+    /// <summary>
+    /// This method is called by the Main Camera when it is gazing at this GameObject and the screen
+    /// is touched.
+    /// </summary>
+    public void OnPointerClick()
+    {
+        Interact();
     }
 
     /// <summary>
